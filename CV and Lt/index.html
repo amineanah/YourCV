@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global AI Resume & Motivation Letter Studio - Amine Janah</title>
+  <meta name="description" content="Prepare tailored resumes and motivation letters tailored for international job applications with country-specific AI advice and automated AI Job Application Agent for Amine Janah.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="logo-container">
+      <div class="logo-icon">🌐</div>
+      <div>
+        <div class="logo-title">Amine Janah's Global AI Career Studio</div>
+        <div class="logo-subtitle">Telecommunication Systems Engineering • Auto-Apply Assistant</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn-primary" id="btn-open-wizard" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+        <i data-lucide="sparkles"></i> ⚡ Guided AI Quick Apply
+      </button>
+      <button class="btn-accent-sm" id="btn-open-import">
+        <i data-lucide="file-up"></i> Import New CV
+      </button>
+      <button class="btn-secondary-sm" id="btn-load-my-default" style="border-color: var(--cyan-accent); color: var(--cyan-accent);">
+        <i data-lucide="user"></i> Amine Janah's Master CV
+      </button>
+      <button class="btn-secondary-sm" id="btn-save-as-default" title="Save current form as default profile">
+        <i data-lucide="save"></i> Save Profile
+      </button>
+      <button class="btn-secondary-sm" id="btn-print">
+        <i data-lucide="printer"></i> Print / Save PDF
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="app-container">
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab-country">
+        <i data-lucide="globe"></i> 1. Target Country & Job
+      </button>
+      <button class="tab-btn" data-tab="tab-profile">
+        <i data-lucide="user-check"></i> 2. Amine's Master CV Data
+      </button>
+      <button class="tab-btn" data-tab="tab-analysis">
+        <i data-lucide="sparkles"></i> 3. AI Country Advice
+        <span class="tab-badge" id="badge-score">92%</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-resume">
+        <i data-lucide="file-text"></i> 4. Tailored Resume Studio
+      </button>
+      <button class="tab-btn" data-tab="tab-letter">
+        <i data-lucide="mail"></i> 5. Motivation Letter Studio
+      </button>
+      <button class="tab-btn" data-tab="tab-agent" style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4);">
+        <i data-lucide="bot" style="color: var(--cyan-accent);"></i> 6. AI Auto-Apply Agent
+      </button>
+    </nav>
+
+    <!-- TAB 1: Target Country & Job -->
+    <section id="tab-country" class="tab-content active">
+      <div class="section-title-wrapper">
+        <h1 class="section-title">Select Your Target Country & Job Role</h1>
+        <p class="section-desc">Hiring norms, photo policies, and resume length standards vary drastically worldwide. Select your destination market below.</p>
+      </div>
+
+      <div class="country-grid" id="country-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="card-panel">
+        <h2 class="section-title" style="font-size: 1.25rem; margin-bottom: 1rem;">Target Position Details</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="targetJobTitle">Target Job Title *</label>
+            <input type="text" id="targetJobTitle" placeholder="e.g. Telecommunication Systems Engineer / Wireless Network Engineer">
+          </div>
+          <div class="form-group">
+            <label for="targetCompany">Target Company Name *</label>
+            <input type="text" id="targetCompany" placeholder="e.g. Vodafone / Ericsson / Siemens / Barclays / Huawei">
+          </div>
+          <div class="form-group full-width">
+            <label for="jobDescription">Job Requirements / Description (Optional for Keyword Tailoring)</label>
+            <textarea id="jobDescription" placeholder="Paste the telecom engineering job description here to optimize 5G, LTE, Massive MIMO, and FTTH keywords..."></textarea>
+          </div>
+        </div>
+        <div style="margin-top: 1.5rem; text-align: right;">
+          <button class="btn-primary" id="btn-goto-profile">
+            Continue to CV Data <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Actual CV Profile Input -->
+    <section id="tab-profile" class="tab-content">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+        <div>
+          <h1 class="section-title">Amine Janah's Career Profile</h1>
+          <p class="section-desc">Master profile pre-filled with your Telecommunications Master's degree, Huawei Quality Control experience, 5G certifications, and skills.</p>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn-secondary-sm" id="btn-save-default-profile-tab" style="padding: 0.75rem 1rem;">
+            <i data-lucide="save"></i> Save As My Default Profile
+          </button>
+          <button class="btn-accent" id="btn-open-import-tab" style="padding: 0.75rem 1.25rem;">
+            <i data-lucide="file-up"></i> Import Updated CV File
+          </button>
+        </div>
+      </div>
+
+      <div class="card-panel">
+        <h2 class="section-title" style="font-size: 1.2rem; margin-bottom: 1rem;">1. Personal Details & Headshot Photo</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone">
+          </div>
+          <div class="form-group">
+            <label for="location">Current Location (City, Country)</label>
+            <input type="text" id="location">
+          </div>
+          <div class="form-group">
+            <label for="linkedin">LinkedIn Profile URL</label>
+            <input type="text" id="linkedin">
+          </div>
+          
+          <!-- Headshot Upload Box -->
+          <div class="form-group">
+            <label>Professional Headshot Photo (Used for DACH/France/UAE)</label>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div class="photo-preview-box" id="photo-preview-container">
+                <img id="headshot-img-preview" src="" alt="Photo Preview" style="display: none;">
+                <span id="photo-placeholder-icon">📷</span>
+              </div>
+              <div>
+                <input type="file" id="headshotFileInput" accept="image/*" style="display: none;">
+                <button type="button" class="btn-secondary-sm" id="btn-browse-photo">
+                  <i data-lucide="image"></i> Import Photo File
+                </button>
+                <button type="button" class="btn-secondary-sm" id="btn-remove-photo" style="display: none; color: var(--danger-color); border-color: rgba(239, 68, 68, 0.3); margin-top: 0.4rem;">
+                  <i data-lucide="trash-2"></i> Remove Photo
+                </button>
+                <input type="hidden" id="photoUrl">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-panel">
+        <h2 class="section-title" style="font-size: 1.2rem; margin-bottom: 1rem;">2. Professional Summary</h2>
+        <div class="form-group">
+          <textarea id="summary" placeholder="Brief 3-4 sentence overview of your telecommunications engineering career..."></textarea>
+        </div>
+      </div>
+
+      <div class="card-panel">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 class="section-title" style="font-size: 1.2rem; margin: 0;">3. Work Experience</h2>
+          <button class="btn-secondary-sm" id="btn-add-experience"><i data-lucide="plus"></i> Add Position</button>
+        </div>
+        <div id="experience-container">
+          <!-- Work Experience entries injected via JS -->
+        </div>
+      </div>
+
+      <div class="card-panel">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 class="section-title" style="font-size: 1.2rem; margin: 0;">4. Education</h2>
+          <button class="btn-secondary-sm" id="btn-add-education"><i data-lucide="plus"></i> Add Degree</button>
+        </div>
+        <div id="education-container">
+          <!-- Education entries injected via JS -->
+        </div>
+      </div>
+
+      <div class="card-panel">
+        <h2 class="section-title" style="font-size: 1.2rem; margin-bottom: 1rem;">5. Core Skills & Languages</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="skills">Key Skills (Comma separated)</label>
+            <input type="text" id="skills">
+          </div>
+          <div class="form-group">
+            <label for="languages">Languages (Comma separated)</label>
+            <input type="text" id="languages">
+          </div>
+        </div>
+        <div style="margin-top: 1.5rem; text-align: right;">
+          <button class="btn-accent" id="btn-run-ai">
+            <i data-lucide="sparkles"></i> Run AI Country Analysis & Adapt
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: AI Country Analysis & Advice -->
+    <section id="tab-analysis" class="tab-content">
+      <div class="section-title-wrapper">
+        <h1 class="section-title">AI Country Compliance & Advisory Panel</h1>
+        <p class="section-desc" id="analysis-country-name">Analyzing Amine's profile for the target market...</p>
+      </div>
+
+      <div class="analysis-layout">
+        <!-- Left: Compliance Score Card -->
+        <div class="score-card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.1rem;">Country Match Score</h3>
+          <div class="score-gauge" id="score-gauge" style="--score-pct: 92;">
+            <div class="score-inner">
+              <div class="score-num" id="score-val">92%</div>
+              <div class="score-label">Compliance</div>
+            </div>
+          </div>
+          <p id="score-status-text" style="font-size: 0.85rem; color: var(--text-muted);">
+            High alignment with international telecom engineering standards.
+          </p>
+
+          <div style="width: 100%; text-align: left; margin-top: 1rem;">
+            <h4 style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Score Breakdown</h4>
+            <div id="score-breakdown-list" style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem;">
+              <!-- Score breakdown items injected here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Actionable Advice Cards -->
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem;">Actionable AI Recommendations</h3>
+          <div class="advice-list" id="advice-list-container">
+            <!-- Advice cards injected here -->
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+            <button class="btn-primary" id="btn-goto-resume">
+              <i data-lucide="file-text"></i> View Tailored Resume
+            </button>
+            <button class="btn-accent" id="btn-goto-letter">
+              <i data-lucide="mail"></i> View Motivation Letter
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: Tailored Resume Studio -->
+    <section id="tab-resume" class="tab-content">
+      <div class="studio-layout">
+        <!-- Sidebar Controls -->
+        <div class="studio-sidebar">
+          <div class="card-panel" style="padding: 1.25rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 1rem;">Template Style</h3>
+            <div class="template-picker">
+              <div class="template-option selected" data-template="classic">
+                <span>Classic International</span>
+                <i data-lucide="check"></i>
+              </div>
+              <div class="template-option" data-template="executive">
+                <span>Modern Executive</span>
+                <i data-lucide="check"></i>
+              </div>
+              <div class="template-option" data-template="minimalist">
+                <span>Clean Minimalist</span>
+                <i data-lucide="check"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-panel" style="padding: 1.25rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 1rem;">Target Country Norms</h3>
+            <div id="resume-country-summary" style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+              <!-- Summarized country rules injected here -->
+            </div>
+          </div>
+
+          <button class="btn-primary" id="btn-print-resume-studio" style="width: 100%; justify-content: center;">
+            <i data-lucide="printer"></i> Export / Save as PDF
+          </button>
+        </div>
+
+        <!-- Resume Paper Preview -->
+        <div class="paper-wrapper">
+          <div class="resume-paper template-classic" id="resume-paper-content" contenteditable="true">
+            <!-- Rendered resume injected here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: Motivation Letter Studio -->
+    <section id="tab-letter" class="tab-content">
+      <div class="studio-layout">
+        <!-- Sidebar Controls -->
+        <div class="studio-sidebar">
+          <div class="card-panel" style="padding: 1.25rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 0.75rem;">Motivation Letter Tone</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;" id="letter-tone-desc">
+              Tailored to cultural standards of the target country.
+            </p>
+            <button class="btn-secondary-sm" id="btn-re-draft-letter" style="width: 100%; justify-content: center;">
+              <i data-lucide="refresh-cw"></i> Re-Draft with AI
+            </button>
+          </div>
+
+          <button class="btn-accent" id="btn-print-letter-studio" style="width: 100%; justify-content: center;">
+            <i data-lucide="printer"></i> Print / Save Cover Letter PDF
+          </button>
+        </div>
+
+        <!-- Motivation Letter Paper Preview -->
+        <div class="paper-wrapper">
+          <div class="letter-paper" id="letter-paper-content" contenteditable="true">
+            <!-- Rendered motivation letter injected here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: AI Auto-Apply Agent Studio -->
+    <section id="tab-agent" class="tab-content">
+      <div class="section-title-wrapper">
+        <h1 class="section-title" style="display: flex; align-items: center; gap: 0.6rem;">
+          <i data-lucide="bot" style="color: var(--cyan-accent);"></i> AI Auto-Apply Job Agent
+        </h1>
+        <p class="section-desc">Deploy your autonomous AI agent to submit applications directly to job boards, company career portals, or email contacts with your country-adapted documents.</p>
+      </div>
+
+      <div class="studio-layout">
+        <!-- Agent Controls -->
+        <div>
+          <div class="card-panel">
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 1rem;">1. Application Portal & Agent Mode</h3>
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="agentPlatform">Target Job Portal / Method</label>
+                <select id="agentPlatform">
+                  <option value="LinkedIn Easy Apply">LinkedIn Easy Apply (Auto-Fill)</option>
+                  <option value="Indeed 1-Click">Indeed 1-Click Submission</option>
+                  <option value="Greenhouse ATS">Greenhouse ATS Portal</option>
+                  <option value="Lever Portal">Lever Company Portal</option>
+                  <option value="Direct Email Agent">Direct HR Email Dispatch</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="agentMode">Agent Mode</label>
+                <select id="agentMode">
+                  <option value="copilot">Copilot Mode (Pre-fill & Request Confirmation)</option>
+                  <option value="autonomous">Fully Autonomous (Auto-Submit)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 1rem;">2. Screening Question Presets</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="presetNotice">Notice Period</label>
+                <input type="text" id="presetNotice" value="Immediate / 1 Month">
+              </div>
+              <div class="form-group">
+                <label for="presetVisa">Work Authorization / Visa Status</label>
+                <input type="text" id="presetVisa" value="Authorized / Open to Sponsorship">
+              </div>
+              <div class="form-group">
+                <label for="presetSalary">Desired Salary Range</label>
+                <input type="text" id="presetSalary" value="Market Standard / Negotiable">
+              </div>
+              <div class="form-group">
+                <label for="presetRelocate">Relocation Preference</label>
+                <input type="text" id="presetRelocate" value="Willing to Relocate to Target Country">
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: right;">
+              <button class="btn-accent" id="btn-launch-agent" style="padding: 1rem 2rem; font-size: 1.05rem;">
+                <i data-lucide="rocket"></i> Launch AI Agent Application
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Agent Live Console & Application History -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Console Panel -->
+          <div class="card-panel" style="background: #090d16; border-color: rgba(6, 182, 212, 0.3);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span class="agent-pulse-dot"></span> Live AI Agent Console
+              </h3>
+              <span id="agent-status-tag" style="font-size: 0.75rem; background: rgba(6, 182, 212, 0.2); color: var(--cyan-accent); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 600;">IDLE</span>
+            </div>
+
+            <!-- Agent Progress Bar -->
+            <div style="background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 1rem;">
+              <div id="agent-progress-bar" style="width: 0%; height: 100%; background: var(--primary-gradient); transition: width 0.4s ease;"></div>
+            </div>
+
+            <div id="agent-terminal-logs" class="terminal-box">
+              <div style="color: #64748b;">[SYSTEM] Agent standing by. Select target parameters and click 'Launch AI Agent Application'.</div>
+            </div>
+          </div>
+
+          <!-- Application History with Proof Receipts -->
+          <div class="card-panel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin: 0;">Submitted Application History & Proofs</h3>
+            </div>
+            <div id="agent-history-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 1rem 0;">No active submissions yet. Launch the agent to view real-time history.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- PROOF OF SUBMISSION RECEIPT MODAL -->
+  <div class="modal-backdrop" id="proof-modal" style="display: none;">
+    <div class="modal-box" style="max-width: 650px;">
+      <div class="modal-header">
+        <h2 style="font-family: var(--font-heading); font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem; color: #6ee7b7;">
+          <i data-lucide="shield-check"></i> Application Delivery Audit Receipt
+        </h2>
+        <button class="modal-close-btn" id="btn-close-proof">&times;</button>
+      </div>
+
+      <div class="modal-body" id="proof-modal-content">
+        <!-- Rendered proof receipt injected via JS -->
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary-sm" id="btn-download-proof-json">
+          <i data-lucide="download"></i> Download Audit Receipt (JSON)
+        </button>
+        <button class="btn-accent" id="btn-close-proof-footer">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUIDED AI QUICK APPLY WIZARD MODAL -->
+  <div class="modal-backdrop" id="wizard-modal" style="display: none;">
+    <div class="modal-box" style="max-width: 720px;">
+      <div class="modal-header">
+        <h2 style="font-family: var(--font-heading); font-size: 1.35rem; display: flex; align-items: center; gap: 0.5rem;">
+          🤖 Guided AI Auto-Apply Wizard
+        </h2>
+        <button class="modal-close-btn" id="btn-close-wizard">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Step 1: Upload CV -->
+        <div class="wizard-step active" id="wizard-step-1">
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 0.4rem;">Step 1: Confirm Your Master CV</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Amine Janah's CV profile is currently loaded. Upload a new file or keep your default profile.</p>
+
+          <div class="file-dropzone" id="wizard-cv-dropzone">
+            <i data-lucide="upload-cloud" style="width: 42px; height: 42px; color: var(--cyan-accent); margin-bottom: 0.5rem;"></i>
+            <div style="font-weight: 600; font-size: 1rem;">Amine Janah's Master Profile Active</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Or drag & drop an updated .pdf / .docx file</div>
+            <input type="file" id="wizard-file-input" accept=".txt,.pdf,.doc,.docx" style="display: none;">
+            <button type="button" class="btn-secondary-sm" id="btn-wizard-browse" style="margin-top: 0.75rem;">Browse New File</button>
+          </div>
+
+          <div style="text-align: center; margin: 1rem 0; color: var(--text-muted); font-size: 0.8rem;">— OR PASTE UPDATED TEXT —</div>
+
+          <textarea id="wizard-cv-text" style="min-height: 120px; font-size: 0.85rem;" placeholder="Paste updated CV text..."></textarea>
+
+          <div style="margin-top: 1.5rem; text-align: right;">
+            <button class="btn-primary" id="btn-wizard-next-1">Next: Target Job & Country <i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 2: Target Job & Country -->
+        <div class="wizard-step" id="wizard-step-2" style="display: none;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 0.4rem;">Step 2: Target Job & Country</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Specify where you want the AI agent to apply on your behalf.</p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="wizardCountry">Target Country</label>
+              <select id="wizardCountry">
+                <option value="UK">🇬🇧 United Kingdom</option>
+                <option value="DE">🇩🇪 Germany (Anschreiben)</option>
+                <option value="US">🇺🇸 United States</option>
+                <option value="CA">🇨🇦 Canada</option>
+                <option value="FR">🇫🇷 France</option>
+                <option value="NL">🇳🇱 Netherlands</option>
+                <option value="UAE">🇦🇪 United Arab Emirates</option>
+                <option value="AU">🇦🇺 Australia</option>
+                <option value="JP">🇯🇵 Japan</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="wizardTitle">Target Job Title *</label>
+              <input type="text" id="wizardTitle" value="Telecommunication Systems Engineer">
+            </div>
+            <div class="form-group">
+              <label for="wizardCompany">Target Company Name *</label>
+              <input type="text" id="wizardCompany" placeholder="e.g. Vodafone / Ericsson / Barclays">
+            </div>
+            <div class="form-group">
+              <label for="wizardPortal">Job Portal / Submission Method</label>
+              <select id="wizardPortal">
+                <option value="LinkedIn Easy Apply">LinkedIn Easy Apply</option>
+                <option value="Indeed 1-Click">Indeed 1-Click</option>
+                <option value="Greenhouse ATS">Greenhouse ATS Portal</option>
+                <option value="Direct Email Agent">Direct HR Email Dispatch</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; display: flex; justify-content: space-between;">
+            <button class="btn-secondary-sm" id="btn-wizard-back-2"><i data-lucide="arrow-left"></i> Back</button>
+            <button class="btn-accent" id="btn-wizard-launch">
+              <i data-lucide="rocket"></i> Adapt Amine's CV & Launch AI Agent Apply!
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORT CV MODAL -->
+  <div class="modal-backdrop" id="import-modal" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 style="font-family: var(--font-heading); font-size: 1.35rem;"><i data-lucide="file-up"></i> Import Your Actual CV</h2>
+        <button class="modal-close-btn" id="btn-close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          Upload your existing CV file (PDF, TXT, Word) or paste your full CV text below. Our parser will extract all personal information, experience, education, and skills automatically!
+        </p>
+
+        <!-- Dropzone -->
+        <div class="file-dropzone" id="cv-dropzone">
+          <i data-lucide="upload-cloud" style="width: 42px; height: 42px; color: var(--cyan-accent); margin-bottom: 0.5rem;"></i>
+          <div style="font-weight: 600; font-size: 1rem;">Drag & drop your CV file here</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Supports .txt, .pdf, .docx files</div>
+          <input type="file" id="cv-file-input" accept=".txt,.pdf,.doc,.docx" style="display: none;">
+          <button type="button" class="btn-secondary-sm" id="btn-browse-file" style="margin-top: 0.75rem;">Browse File</button>
+        </div>
+
+        <div style="text-align: center; margin: 1rem 0; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase;">
+          — OR PASTE RAW CV TEXT BELOW —
+        </div>
+
+        <div class="form-group">
+          <textarea id="raw-cv-text" style="min-height: 180px; font-family: monospace; font-size: 0.85rem;" placeholder="Paste the text of your current CV here..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary-sm" id="btn-cancel-import">Cancel</button>
+        <button class="btn-accent" id="btn-execute-import">
+          <i data-lucide="sparkles"></i> Parse & Populate CV Fields
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">Amine Janah's Profile Loaded & Saved!</div>
+
+  <!-- Scripts -->
+  <script src="countryData.js"></script>
+  <script src="sampleProfiles.js"></script>
+  <script src="myDefaultProfile.js"></script>
+  <script src="cvParser.js"></script>
+  <script src="aiEngine.js"></script>
+  <script src="agentEngine.js"></script>
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
